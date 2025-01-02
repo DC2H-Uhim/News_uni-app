@@ -1,16 +1,28 @@
 {
+	// 页面配置
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "UNI-APP零基础入门"
+			}
+		},
+		// 可以通过页面跳转进行显示
+		{
+			"path" : "pages/list/list",
+			"style" : 
+			{
+				"navigationBarTitleText" : "新闻列表",
+				"navigationBarBackgroundColor": "#1A9B34",
+				"navigationBarTextStyle": "white"
 			}
 		}
 	],
+	// 全局配置包容性大，作用域小（就近原则）
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarTitleText": "uni系列课程",
+		"navigationBarBackgroundColor": "#E53D30",
 		"backgroundColor": "#F8F8F8"
 	},
 	"uniIdRouter": {}
