@@ -20,6 +20,33 @@
 		<view>web前端开发</view>
 		<text user-select selectable>node.js</text>
 		<text space="emsp" decode>vue.  &Equilibrium;  js</text>
+		<!-- 滑块盒子：可滚动视图区域滑动 -->
+		<scroll-view class="scroll" scroll-x scroll-y>
+			<view class="group">
+				<view class="item">
+					111
+				</view>
+				<view class="item">
+					111
+				</view>
+				<view class="item">
+					111
+				</view>
+				<view class="item">
+					111
+				</view>
+				<view class="item">
+					111
+				</view>
+			</view>
+		</scroll-view>
+		<!-- 轮播器：页面滑动 -->
+		<swiper indicator-dots="true" autoplay interval="3000" duration="1000">
+			<swiper-item class="item" style="background: red;">1111</swiper-item>
+			<swiper-item class="item" style="background: yellow;">2222</swiper-item>
+			<swiper-item class="item" style="background: skyblue;">3333</swiper-item>
+			<swiper-item class="item" style="background: green;">4444</swiper-item>
+		</swiper>
 	</view>
 </template>
 
@@ -49,8 +76,24 @@
 	}
 	.block{
 		width: 750rpx;//宽满屏
-		height: 1334rpx;//高满屏
+		height: 200rpx;//1334rpx高满屏
 		background: green;
+	}
+}
+.scroll{
+	border: 1px solid red;
+	box-sizing: border-box;//内边框满屏
+	height: 220rpx;
+	.group{
+		white-space: nowrap;//不换行
+		.item{
+			width: 220rpx;
+			height: 220rpx;
+			height: 100rpx;
+			background: royalblue;
+			display: inline-block;//行级块元素
+			margin-right: 10rpx;
+		}
 	}
 }
 </style>
