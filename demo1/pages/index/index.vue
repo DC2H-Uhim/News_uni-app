@@ -9,6 +9,11 @@
 		<h2>标题二加粗<i>标签</i></h2>
 	</div> -->
 	<view class="out">
+		<!-- image组件存在默认宽高 -->
+		<image src="/static/logo.png" mode="aspectFit" class="myimg"></image>
+		<image src="/static/logo.png" mode="widthFix" class="mypic"></image>
+		<!-- img是h5组件，宽高为图片本身的大小 -->
+		<img src="/static/logo.png" alt="" />
 		<view class="box">
 		</view>
 		<view class="block">
@@ -40,12 +45,22 @@
 				</view>
 			</view>
 		</scroll-view>
-		<!-- 轮播器：页面滑动 -->
-		<swiper indicator-dots="true" autoplay interval="3000" duration="1000">
-			<swiper-item class="item" style="background: red;">1111</swiper-item>
+		<!-- banner轮播图：滑块视图容器 页面滑动 -->
+		<swiper class="swiper" circular indicator-dots="true" autoplay interval="3000" duration="1000">
+			<!-- <swiper-item class="item" style="background: red;">1111</swiper-item>
 			<swiper-item class="item" style="background: yellow;">2222</swiper-item>
 			<swiper-item class="item" style="background: skyblue;">3333</swiper-item>
-			<swiper-item class="item" style="background: green;">4444</swiper-item>
+			<swiper-item class="item" style="background: green;"> -->4444</swiper-item>
+			<swiper-item class="item">
+				<!-- aspectFill 高度保留 宽度被切割掉 -->
+				<image src="/static/images/t1.png" mode="aspectFill"></image>
+			</swiper-item>
+			<swiper-item class="item">
+				<image src="/static/images/t2.png" mode="aspectFill"></image>
+			</swiper-item>
+			<swiper-item class="item">
+				<image src="/static/images/t3.png" mode="aspectFill"></image>
+			</swiper-item>
 		</swiper>
 	</view>
 </template>
@@ -68,6 +83,15 @@
 // 		}
 // 	}
 // }
+.myimg{
+	//宽度和高度存在默认值
+	width: 260rpx;
+	// height: 260rpx;
+}
+.mypic{
+	width: 300rpx;
+	height: 300rpx;
+}
 .out{
 	.box{//rpx:响应式单位
 		width: 200px;
@@ -93,6 +117,18 @@
 			background: royalblue;
 			display: inline-block;//行级块元素
 			margin-right: 10rpx;
+		}
+	}
+}
+.swiper{
+	height: 400rpx;
+	margin-top: 100rpx;
+	.item{
+		padding: 20rpx;
+		box-sizing: border-box;//设置的宽度和高度包含内外边框，不考虑内外边框的值，对齐
+		image{
+			width: 100%;
+			height: 350rpx;
 		}
 	}
 }
