@@ -9,6 +9,9 @@
 		<h2>标题二加粗<i>标签</i></h2>
 	</div> -->
 	<view class="out">
+		<!-- 相对路径 H5只有静音状态才能自动播放-->
+		<!-- v-bind 简写 : -->
+		<video src="../../static/images/video1.mp4" initial-time="3" :controls="false" style="display: flex; margin: 100rpx auto;"></video>
 		<!-- image组件存在默认宽高 -->
 		<image src="/static/logo.png" mode="aspectFit" class="myimg"></image>
 		<image src="/static/logo.png" mode="widthFix" class="mypic"></image>
