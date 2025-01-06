@@ -9,18 +9,26 @@
 		<h2>标题二加粗<i>标签</i></h2>
 	</div> -->
 	<view class="out">
+		<button type="primary">确认提交</button>
+		<button size="mini" type="warn">确认提交</button>
+		<button size="mini" type="warn" plain loading>确认提交</button>
+		<input type="text" />
+		
 		<!-- 相对路径 H5只有静音状态才能自动播放-->
 		<!-- v-bind 简写 : -->
 		<video src="../../static/images/video1.mp4" initial-time="3" :controls="false" style="display: flex; margin: 100rpx auto;"></video>
+		
 		<!-- image组件存在默认宽高 -->
 		<image src="/static/logo.png" mode="aspectFit" class="myimg"></image>
 		<image src="/static/logo.png" mode="widthFix" class="mypic"></image>
+		
 		<!-- img是h5组件，宽高为图片本身的大小 -->
 		<img src="/static/logo.png" alt="" />
 		<view class="box">
 		</view>
 		<view class="block">
 		</view>
+		
 		<!-- 内置icon组件 无法满足需求，后续会使用第三方组件 -->
 		<icon type="success" size="26"/>
 		<!-- view是块标签替换div，text是行标签替换span -->
