@@ -9,6 +9,9 @@
 		<h2>标题二加粗<i>标签</i></h2>
 	</div> -->
 	<view class="out">
+		<navigator url="/pages/list/list">新闻列表</navigator>
+		<navigator url="/pages/about/about" open-type="redirect">关于我们</navigator>
+		
 		<button type="primary">确认提交</button>
 		<button size="mini" type="warn">确认提交</button>
 		<button size="mini" type="warn" plain loading>确认提交</button>

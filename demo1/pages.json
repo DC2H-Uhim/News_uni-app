@@ -16,6 +16,13 @@
 				"navigationBarBackgroundColor": "#1A9B34",
 				"navigationBarTextStyle": "white"
 			}
+		},
+		{
+			"path" : "pages/about/about",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
 		}
 	],
 	// 全局配置包容性大，作用域小（就近原则）
