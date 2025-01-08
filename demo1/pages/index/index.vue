@@ -1,149 +1,159 @@
 <template>
-	<!-- Vue2要求仅有唯一的一个根标签view -->
-	<!-- div,h1,h2这些标签的使用仅适用于H5页面的使用 -->
-	<!--<div class="box">
-		<h1>uni-app<span class="row">零基础</span>入门</h1>
-		<view class="">
-			从基础到进阶
-		</view>
-		<h2>标题二加粗<i>标签</i></h2>
-	</div> -->
 	<view class="out">
+		
+		<navigator url="/pages/demo4/demo4?wd=uniapp">跳转到demo4</navigator>
+		
+		<view style="width: 200rpx; height:200rpx; background:pink" @click="goDemo4"></view>
+		
+		
+		
+		<pubTitle :list="[4,5,6]" :user="{user:'张三',gender:'女'}" :time="time" :title="test" subtitle="index page"></pubTitle>
+		//父向子传值 子组件通过props接受父组件传过来的值
+		
 		<navigator url="/pages/list/list">新闻列表</navigator>
+		<navigator url="/pages/list/list" open-type='reLaunch'>新闻列表</navigator>
 		<navigator url="/pages/about/about" open-type="redirect">关于我们</navigator>
+		
+		<navigator url="/pages/list/list">
+			<image src="../../static/images/pic1.jpg" mode=""></image>
+		</navigator>
 		
 		<button type="primary">确认提交</button>
 		<button size="mini" type="warn">确认提交</button>
 		<button size="mini" type="warn" plain loading>确认提交</button>
-		<input type="text" />
+		<input type="text">
 		
-		<!-- 相对路径 H5只有静音状态才能自动播放-->
-		<!-- v-bind 简写 : -->
-		<video src="../../static/images/video1.mp4" initial-time="3" :controls="false" style="display: flex; margin: 100rpx auto;"></video>
+		<video src="../../static/images/media.mp4" initial-time="20" :controls="false"></video>
 		
-		<!-- image组件存在默认宽高 -->
-		<image src="/static/logo.png" mode="aspectFit" class="myimg"></image>
-		<image src="/static/logo.png" mode="widthFix" class="mypic"></image>
 		
-		<!-- img是h5组件，宽高为图片本身的大小 -->
-		<img src="/static/logo.png" alt="" />
-		<view class="box">
-		</view>
-		<view class="block">
-		</view>
+		<image src="/static/images/pic4.jpg" mode="" class="myimg"></image>
+		<image src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1ae87107-2943-4ba6-be2b-390ca27c6260.png" mode=""></image>
+		<image src="/static/images/pic7.jpg" mode="widthFix" class="mypic"></image>
 		
-		<!-- 内置icon组件 无法满足需求，后续会使用第三方组件 -->
+		<view class="box"> div </view> 
+		<view class="block"></view>
 		<icon type="success" size="26"/>
-		<!-- view是块标签替换div，text是行标签替换span -->
-		<view>uni-app</view>
+		<icon type="waiting" size="26"/>
+		<view>uniapp</view>
 		<view>web前端开发</view>
-		<text user-select selectable>node.js</text>
-		<text space="emsp" decode>vue.  &Equilibrium;  js</text>
-		<!-- 滑块盒子：可滚动视图区域滑动 -->
+		<text user-select selectable>nodejs span </text> 
+		<text space="ensp" decode>vue   &gt;    js</text>
+		
 		<scroll-view class="scroll" scroll-x scroll-y>
 			<view class="group">
 				<view class="item">
 					111
 				</view>
+				
 				<view class="item">
 					111
 				</view>
+				
 				<view class="item">
 					111
 				</view>
+				
 				<view class="item">
 					111
 				</view>
+				
 				<view class="item">
 					111
 				</view>
 			</view>
 		</scroll-view>
-		<!-- banner轮播图：滑块视图容器 页面滑动 -->
-		<swiper class="swiper" circular indicator-dots="true" autoplay interval="3000" duration="1000">
-			<!-- <swiper-item class="item" style="background: red;">1111</swiper-item>
-			<swiper-item class="item" style="background: yellow;">2222</swiper-item>
-			<swiper-item class="item" style="background: skyblue;">3333</swiper-item>
-			<swiper-item class="item" style="background: green;"> -->4444</swiper-item>
+		
+		
+		<swiper class="swiper" circular autoplay interval="3000" duration="200" indicator-dots indicator-color="rgba(255,255,255,0.5)" indicator-active-color="rgba(255,255,255,1)">
 			<swiper-item class="item">
-				<!-- aspectFill 高度保留 宽度被切割掉 -->
-				<image src="/static/images/t1.png" mode="aspectFill"></image>
+				<image src="/static/images/pic1.jpg" mode="aspectFill"></image>
 			</swiper-item>
 			<swiper-item class="item">
-				<image src="/static/images/t2.png" mode="aspectFill"></image>
+				<image src="/static/images/pic2.jpg" mode="aspectFill"></image>
 			</swiper-item>
 			<swiper-item class="item">
-				<image src="/static/images/t3.png" mode="aspectFill"></image>
+				<image src="/static/images/pic3.jpg" mode="aspectFill"></image>
 			</swiper-item>
 		</swiper>
-	</view>
+		
+		<view style="height: 500rpx;"></view>
+		
+		
+		
+		
+	</view>	
 </template>
 
 <script>
 	export default {
-
+		data(){
+			return {
+				test:"优课学院",
+				time:Date.now()
+			}
+		},
+		methods:{
+			goDemo4(){				
+				uni.navigateTo({
+					url:"/pages/demo4/demo4?wd=uni-app&author=咸虾米"
+				})
+			}
+		}
 	}
 </script>
 
-<style lang="scss">//css的加长版，可以类似嵌套一样的使用
-// .box{
-// 	height: 100px;
-// 	background: pink;
-// 	h1{
-// 		font-size: 40px;
-// 		color: red;
-// 		.row{
-// 			font-style: italic;
-// 		}
-// 	}
-// }
-.myimg{
-	//宽度和高度存在默认值
-	width: 260rpx;
-	// height: 260rpx;
+<style lang="scss">
+.myimg{ 
+	width: 360rpx;
+	
 }
-.mypic{
-	width: 300rpx;
-	height: 300rpx;
+
+.mypic{ 
+	
 }
-.out{
-	.box{//rpx:响应式单位
+	
+	
+.out{ 
+	.box{ 
 		width: 200px;
 		height: 200px;
 		background: pink;
 	}
-	.block{
-		width: 750rpx;//宽满屏
-		height: 200rpx;//1334rpx高满屏
+	.block{ 
+		width: 750rpx;
+		height: 200rpx;
 		background: green;
 	}
 }
-.scroll{
-	border: 1px solid red;
-	box-sizing: border-box;//内边框满屏
+
+.scroll{ 
+	border:1px solid red;
+	box-sizing: border-box;
 	height: 220rpx;
-	.group{
-		white-space: nowrap;//不换行
-		.item{
+	height: 100rpx;
+	.group{ 
+		white-space: nowrap;
+		.item{ 
 			width: 220rpx;
 			height: 220rpx;
-			height: 100rpx;
 			background: royalblue;
-			display: inline-block;//行级块元素
+			display: inline-block;
 			margin-right: 10rpx;
 		}
 	}
 }
-.swiper{
+
+.swiper{ 
 	height: 400rpx;
 	margin-top: 100rpx;
-	.item{
-		padding: 20rpx;
-		box-sizing: border-box;//设置的宽度和高度包含内外边框，不考虑内外边框的值，对齐
+	.item{ 
+		padding:20rpx;
+		box-sizing: border-box;
 		image{
 			width: 100%;
 			height: 350rpx;
 		}
 	}
 }
+
 </style>
